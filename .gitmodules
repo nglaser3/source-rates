@@ -1,0 +1,6 @@
+[submodule "petsc"]
+	path = petsc
+	url = git@github.com:petsc/petsc.git
+[submodule "NJOY21"]
+	path = NJOY21
+	url = git@github.com:njoy/NJOY21.git
