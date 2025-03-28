@@ -16,7 +16,8 @@ public:
 
     DepleteMatrix(std::string filepath, double flux);
 
-    Mat const getMatrix();
+    Mat const getMatrix()
+    {return this->_matrix};
 
 protected:
 
@@ -27,7 +28,7 @@ protected:
     void fillDepleteMatrix();
     std::vector<Isotope> _isotopes;
     
-    int* _nnz;
+    PetscInt* _nnz;
 
     Mat _matrix;
 };

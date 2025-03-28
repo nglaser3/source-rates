@@ -34,7 +34,7 @@ DepleteMatrix::getIsotopesFromFile(std::string filepath, double flux)
     {
         num_nodes += 1;
         
-        Isotope current_isotope(node, flux);
+        Isotope current_isotope(num_nodes-1, node, flux);
         this->_isotopes.pushback(current_isotope);
     }
 
@@ -75,10 +75,4 @@ DepleteMatrix::fillDepleteMatrix()
     }
     PetscCall(MatAssemblyBegin(this->_matrix, MAT_FINAL_ASSEMBLY));
     PetscCall(MatAssemblyEnd(this->_matrix, MAT_FINAL_ASSEMBLY));
-}
-
-Mat
-DepleteMatrix::getMatrix()
-{
-    return this->_matrix;
 }
