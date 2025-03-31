@@ -16,8 +16,13 @@ public:
 
     DepleteMatrix(std::string filepath, double flux);
 
+    ~DepleteMatrix();
+
     Mat const getMatrix()
     {return this->_matrix};
+
+    Vec const getInitialVec()
+    {return this->_n_initial;}
 
 protected:
 
@@ -31,6 +36,8 @@ protected:
     PetscInt* _nnz;
 
     Mat _matrix;
+
+    Vec _n_initial;
 };
 
 
